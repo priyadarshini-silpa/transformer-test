@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import NavBar from './components/navbar'
+import CardShort from './components/card_short'
+import CardOpen from './components/card_open'
+import { Grid } from '@mui/material';
+import Footer from './components/footer'
 
-function App() {
+export default function BasicTextFields() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavBar/>
+      <Grid container justifyContent="center" spacing={10} marginTop={2} marginBottom={6}>
+        <Grid item xs={8} sm={6} md={4}>
+          <CardShort/>
+        </Grid>
+        <Grid item xs={8} sm={6} md={4}>
+          <CardOpen/>
+        </Grid>
+      </Grid>
+      <Footer/>
     </div>
   );
 }
-
-export default App;
